@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Firma de PDFs</title>
 </head>
 <body>
@@ -23,16 +23,26 @@
         <label for="search-text">Texto a buscar:</label><br>
         <input type="text" id="search-text" required><br>
 
+        <!-- Pagina donde buscar en genral -->
+        <label for="page-search">Pagina de busqueda general</label><br>
+        <select id="page-search">
+            <option value=0 selected>Ultima Pagina</option>
+            <option value=1>Penultima Pagina</option>
+            <option value=2>Ante penultima Pagina</option>
+        </select><br>
+
         <!-- Botón para procesar los PDFs -->
         <button id="process-btn">Firmar PDFs</button>
         
         <!-- Área de resultados -->
         <div id="result"></div>
+
+        <canvas id="pdf-canvas"></canvas>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v2.1.1/dist/tesseract.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

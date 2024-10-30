@@ -1,6 +1,7 @@
-export function getFileSignature() {
-    const inputFileSignature = document.getElementById('signature-file');
-    const signature = inputFileSignature.files[0]; // Obtener el archivo de la firma
+import { archivoAArrayBuffer } from "./utilities.js";
+
+export async function getFileSignature(signatureInput) {
+    const signature = signatureInput.files[0]; // Obtener el archivo de la firma
 
     // Comprobar si no se ha seleccionado ningún archivo
     if (!signature) {
@@ -14,6 +15,8 @@ export function getFileSignature() {
         return null; // Retorna null si el archivo no es un PNG
     }
 
-    return signature; // Retorna el archivo de la firma si es válido
+    // Convertir la firma a ArrayBuffer
+    const buffer = await archivoAArrayBuffer(signature);
+    return buffer; // Retorna el ArrayBuffer del archivo de la firma
 }
 

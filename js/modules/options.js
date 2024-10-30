@@ -1,4 +1,4 @@
-export function getOptionPage() {
-    const optionPage = document.getElementById('page-search');
-    return optionPage.value;
+export function getOptionPage(optionInput) {
+    return parseInt(optionInput.value);
+
 }

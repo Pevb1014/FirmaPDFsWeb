@@ -1,6 +1,5 @@
-export function getSearchText() {
-    const labelSearchText = document.getElementById('search-text');
-    const text = labelSearchText.value; // Obtener el texto del campo de entrada
+export function getSearchText(textInput) {
+    const text = textInput.value; // Obtener el texto del campo de entrada
 
     // Comprobar si no se ha ingresado texto
     if (text.trim() === '') {

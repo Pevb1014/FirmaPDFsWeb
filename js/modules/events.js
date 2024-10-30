@@ -34,7 +34,8 @@ export async function manejoEventos() {
                         const infoResult = searchTextContentResult[searchPage];
                         //console.log(infoResult)
                         const newBufferPDFText = await insertSignaturePDF(BufferPDFFile, searchPage, bufferSignature, infoResult.posX, infoResult.posY, signatureWidth, signatureHeight);
-                        download(newBufferPDFText, `${key} firmado.pdf`); // Agrega extensión .pdf al nombre
+
+                        download(newBufferPDFText, `${key} firmado.pdf`);
                         //console.log(newBufferPDF);
                     }
                 } else {

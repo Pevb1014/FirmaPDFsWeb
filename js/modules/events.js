@@ -34,6 +34,7 @@ export async function manejoEventos() {
                         const infoResult = searchTextContentResult[searchPage];
                         //console.log(infoResult)
                         const newBufferPDFText = await insertSignaturePDF(BufferPDFFile, searchPage, bufferSignature, infoResult.posX, infoResult.posY, signatureWidth, signatureHeight);
+
                         download(newBufferPDFText, `${key} firmado.pdf`);
                         //console.log(newBufferPDF);
                     }
@@ -49,7 +50,7 @@ export async function manejoEventos() {
                         const lastValue = searchResults[searchPage][lastKey];
                         const newBufferPDFImage = await insertSignaturePDF(BufferPDFFile, searchPage, bufferSignature, lastValue.x, lastValue.y, signatureWidth, signatureHeight);
                         download(newBufferPDFImage, `${key} firmado.pdf`);
-                        console.log(lastValue);
+                        //console.log(lastValue);
                     }
                 }
                 searchPage = 0;
